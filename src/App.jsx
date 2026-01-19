@@ -5,6 +5,7 @@ import About from './component/About.jsx'
 import WriteUps from './component/WriteUps.jsx'
 import FeaturedWork from './component/FeaturedWork.jsx'
 import Contact from './component/Contact.jsx'
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <FeaturedWork></FeaturedWork>
         <WriteUps></WriteUps>
         <Contact></Contact>
+        <Toaster position="top-right" />
       </div>
   )
 }

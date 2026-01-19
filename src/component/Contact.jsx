@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
+
 
 
 const Contact = () => {
@@ -24,39 +26,62 @@ const Contact = () => {
   //   emailjs.init(publicKey);
   // }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const autoReplyID = import.meta.env.VITE_EMAILJS_AUTOREPLY_ID;
+  //   const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  //   const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  //   const autoReplyID = import.meta.env.VITE_EMAILJS_AUTOREPLY_ID;
 
-    if (!serviceID || !templateID || !autoReplyID) {
-      alert("Email service is not configured correctly");
-      return;
-    }
+  //   if (!serviceID || !templateID || !autoReplyID) {
+  //     alert("Email service is not configured correctly");
+  //     return;
+  //   }
 
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      message: message,
-    };
+  //   const templateParams = {
+  //     from_name: name,
+  //     from_email: email,
+  //     message: message,
+  //   };
 
-    Promise.all([
-      emailjs.send(serviceID, templateID, templateParams),
-      emailjs.send(serviceID, autoReplyID, templateParams),
-    ])
-      .then(() => {
-        alert("Email sent successfully!");
-        setName("");
-        setEmail("");
-        setMessage("");
-      })
-      .catch((err) => {
-        console.error("EmailJS Error:", err);
-        alert("Something went wrong. Please try again later.");
-      });
-  };
+  //   Promise.all([
+  //     emailjs.send(serviceID, templateID, templateParams),
+  //     emailjs.send(serviceID, autoReplyID, templateParams),
+  //   ])
+  //     .then(() => {
+  //       alert("Email sent successfully!");
+  //       setName("");
+  //       setEmail("");
+  //       setMessage("");
+  //     })
+  //     .catch((err) => {
+  //       console.error("EmailJS Error:", err);
+  //       alert("Something went wrong. Please try again later.");
+  //     });
+  // };
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    if (!res.ok) throw new Error("Failed");
+
+    toast.success("Message sent successfully!");
+    setName("");
+    setEmail("");
+    setMessage("");
+  } catch (err) {
+    toast.error("Something went wrong. Please try again.");
+  }
+};
+
+
 
   return (
     <section
