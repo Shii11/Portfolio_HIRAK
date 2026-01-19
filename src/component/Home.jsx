@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-     <section id='home' className="min-h-screen flex flex-col items-center justify-center text-center px-6">
+    <section id='home' className="min-h-screen flex flex-col items-center justify-center text-center px-6">
 
       <h1 className="text-5xl sm:text-6xl md:text-7xl tracking-[0.3em] font-normal text-black">
         HIRAK JYOTI NATH
@@ -12,13 +12,24 @@ const Home = () => {
         Writer and Illustrator
       </p>
 
-      <p className="mt-2 text-xs tracking-wider text-black/60">
+      {/* <p className="mt-2 text-xs tracking-wider text-black/60">
         Born in Assam
-      </p>
+      </p> */}
 
-      <button className="mt-10 bg-black text-white px-8 py-3 text-sm tracking-widest hover:bg-black/80 transition">
-        SAY HI!
-      </button>
+      <div className="mt-10 flex gap-6">
+        <a href="#writeups">
+          <button className="bg-black text-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black border transition">
+            Write Ups
+          </button>
+        </a>
+
+        <a href="https://www.behance.net/hirakjnath" target="_blank" rel="noopener noreferrer">
+          <button className="border border-black px-8 py-3 text-sm tracking-widest hover:bg-black hover:text-white transition">
+          Art Works
+        </button>
+        </a>
+      </div>
+
       {/* Curved line effect (fake it, because CSS drama is optional) */}
       {/* <div className="w-full max-w-5xl border-t border-black/30 mb-10"></div> */}
     </section>

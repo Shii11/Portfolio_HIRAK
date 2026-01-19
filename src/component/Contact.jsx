@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
 
@@ -9,62 +8,11 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  // DEBUG: check env loading
-  // useEffect(() => {
-  //   console.log(
-  //     "EMAILJS PUBLIC KEY:",
-  //     import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-  //   );
-
-  //   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-  //   if (!publicKey) {
-  //     console.error("❌ EmailJS public key missing from .env");
-  //     return;
-  //   }
-
-  //   emailjs.init(publicKey);
-  // }, []);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  //   const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  //   const autoReplyID = import.meta.env.VITE_EMAILJS_AUTOREPLY_ID;
-
-  //   if (!serviceID || !templateID || !autoReplyID) {
-  //     alert("Email service is not configured correctly");
-  //     return;
-  //   }
-
-  //   const templateParams = {
-  //     from_name: name,
-  //     from_email: email,
-  //     message: message,
-  //   };
-
-  //   Promise.all([
-  //     emailjs.send(serviceID, templateID, templateParams),
-  //     emailjs.send(serviceID, autoReplyID, templateParams),
-  //   ])
-  //     .then(() => {
-  //       alert("Email sent successfully!");
-  //       setName("");
-  //       setEmail("");
-  //       setMessage("");
-  //     })
-  //     .catch((err) => {
-  //       console.error("EmailJS Error:", err);
-  //       alert("Something went wrong. Please try again later.");
-  //     });
-  // };
-
   const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    const res = await fetch("/api/send-email", {
+    const res = await fetch("/api/send-email.js", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, message }),
@@ -81,8 +29,6 @@ const Contact = () => {
   }
 };
 
-
-
   return (
     <section
       id="contact"
@@ -96,6 +42,7 @@ const Contact = () => {
         <p className="mt-4 text-sm tracking-widest text-black">
           <a href="mailto:nathhirakj16@gmail.com">nathhirakj16@gmail.com</a>
         </p>
+        <p className="mt-4 text-sm tracking-widest text-black">+91 7578892971</p>
 
         <form className="mt-14 border border-black/40" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 border-b border-black/40">

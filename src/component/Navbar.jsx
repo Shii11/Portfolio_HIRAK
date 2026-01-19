@@ -96,16 +96,6 @@ const Navbar = () => {
                 </button>
               </li>
             ))}
-            {/* <div className="bg-black rounded-full px-3 py-2">
-              <a
-                href="https://www.linkedin.com/in/madhurjya-bora-36ab1496"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white"
-              >
-                <FiLinkedin size={22} />
-              </a>
-            </div> */}
           </ul>
         </div>
       )}
