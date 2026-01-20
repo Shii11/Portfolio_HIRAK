@@ -38,7 +38,7 @@ const Contact = () => {
         CONTACT
       </h2>
 
-      <div className="relative z-10 max-w-4xl mx-auto mt-48">
+      <div className="relative z-10 max-w-4xl mx-auto mt-20 md:mt-48">
         <p className="mt-4 text-sm tracking-widest text-black">
           <a href="mailto:nathhirakj16@gmail.com">nathhirakj16@gmail.com</a>
         </p>

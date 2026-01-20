@@ -1,4 +1,5 @@
 import React from 'react'
+// import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -19,14 +20,20 @@ const Home = () => {
       <div className="mt-10 flex gap-6">
         <a href="#writeups">
           <button className="bg-black text-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black border transition">
-            Write Ups
+            WriteUps
           </button>
         </a>
 
-        <a href="https://www.behance.net/hirakjnath" target="_blank" rel="noopener noreferrer">
+        {/* <Link to="/artworks">
           <button className="border border-black px-8 py-3 text-sm tracking-widest hover:bg-black hover:text-white transition">
-          Art Works
-        </button>
+            ArtWorks
+          </button>
+        </Link> */}
+
+        <a href="#artworks">
+          <button className="border border-black px-8 py-3 text-sm tracking-widest hover:bg-black hover:text-white transition">
+            ArtWorks
+          </button>
         </a>
       </div>
 

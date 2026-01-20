@@ -30,7 +30,8 @@ const Navbar = () => {
   const menuItems = [
     { id: "home", title: "Home" },
     { id: "about", title: "About" },
-    { id: "writeups", title: "Write Ups" },
+    { id: "writeups", title: "WriteUps" },
+    { id: "artworks", title: "ArtWorks"},
     { id: "featuredWork", title: "Featured Work" },
     { id: "contact", title: "Contact" },
   ];
