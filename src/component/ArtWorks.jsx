@@ -106,7 +106,7 @@ const ArtWorks = () => {
             <img
               src={work.image}
               alt={work.title}
-              className="my-6 w-full h-26 object-cover"
+              className="my-6 w-full h-40 sm:h-30 object-cover object-fill"
             />
           </div>
         ))}
@@ -149,7 +149,7 @@ const ArtWorks = () => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-65 object-cover mb-4"
+                    className="w-full h-65 object-contain mb-4"
                   />
 
                   <p className="text-sm tracking-wide mb-3 text-center">
