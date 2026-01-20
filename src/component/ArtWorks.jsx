@@ -93,7 +93,7 @@ const ArtWorks = () => {
       </h2>
 
       {/* MAIN GRID */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mt-20 md:mt-34">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mt-25 md:mt-34">
         {works.map((work) => (
           <div
             key={work.id}
