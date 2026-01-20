@@ -1,4 +1,5 @@
 import React from 'react'
+import profileVideo from '../assets/profile/VID-20260119-WA0010.mp4';
 
 const About = () => {
   return (
@@ -15,7 +16,7 @@ const About = () => {
         <div className="flex justify-center md:justify-start">
           <div className="w-72 h-80 rounded-full overflow-hidden ">
             <video
-              src="src\assets\profile\VID-20260119-WA0010.mp4"
+              src={profileVideo}
               autoPlay
               loop
               muted

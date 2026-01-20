@@ -71,7 +71,7 @@ const WriteUps = () => {
         WRITE UPS
       </h1>
 
-      <div className="relative z-10 max-w-5xl mx-auto mt-40 md:mt-32">
+      <div className="relative z-10 max-w-5xl mx-auto mt-0 md:mt-32">
 
         {projects.map((item, index) => (
           <div
