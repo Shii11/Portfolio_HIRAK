@@ -16,19 +16,19 @@ const WriteUps = () => {
     },
     {
       bookName: "Terminal Trellis",
-      logline: "When a delayed flight strands a young, broke artist overnight in an Indian airport, a single night in the terminal becomes a crossroads of strangers, failed plans, quiet revelations, and fragile hope—forcing him to confront love, ambition, and the thin line between dreams imagined and lives actually lived.",
+      logline: "When a delayed flight strands a young, broke artist overnight in an Indian airport, a single night in the terminal becomes a crossroads of strangers, failed plans, quiet revelations, and fragile hope, forcing him to confront love, ambition, and the thin line between dreams imagined and lives actually lived.",
       synopsis1:
-        "A Night in a Terminal chronicles one sleepless night in an Indian airport where a delayed flight suspends not just travel, but life itself. The narrator, a young illustrator on his way to a convocation, a potential job, and a long-awaited love confession, finds his future paused by circumstances beyond his control. As hours pass, the terminal fills with restless strangers—artists, corporate workers, lovers, migrants, doctors, and drunks—each carrying their own urgency, regrets, and quiet hopes.",
+        "A Night in a Terminal chronicles one sleepless night in an Indian airport where a delayed flight suspends not just travel, but life itself. The narrator, a young illustrator on his way to a convocation, a potential job, and a long-awaited love confession, finds his future paused by circumstances beyond his control. As hours pass, the terminal fills with restless strangers, artists, corporate workers, lovers, migrants, doctors, and drunks. Each carrying their own urgency, regrets, and quiet hopes.",
 
       synopsis2:
-        "Through conversations in smoking rooms, shared food, arguments, laughter, and exhaustion, the airport transforms into a liminal space where social hierarchies dissolve and raw humanity emerges. Dreams blur with reality, patience erodes, and optimism is repeatedly tested. The night becomes a mirror to a generation caught between ambition and uncertainty, struggling to move forward while stuck in place. Intimate, observational, and darkly humorous, the novel explores waiting, failure, connection, and the fragile belief that morning may still bring change—even if it arrives differently than imagined.",
+        "Through conversations in smoking rooms, shared food, arguments, laughter, and exhaustion, the airport transforms into a liminal space where social hierarchies dissolve and raw humanity emerges. Dreams blur with reality, patience erodes, and optimism is repeatedly tested. The night becomes a mirror to a generation caught between ambition and uncertainty, struggling to move forward while stuck in place. Intimate, observational, and darkly humorous, the novel explores waiting, failure, connection, and the fragile belief that morning may still bring change even if it arrives differently than imagined.",
       link: "https://drive.google.com/file/d/1hTOH-kddKxOk0567Dq7A0uUIk4TUomCf/view?usp=drive_link",
     },
     {
       bookName: "Sermons of Epiphany",
       logline: "In a myth-scarred world of elves, men, and ancient beasts, a prophecy foretells that the Son of a Wendigo will end a devastating war but he is born not of kings or warriors, but of forbidden love, hunted by prideful kingdoms whose greed may destroy the very hope meant to save them.",
       synopsis1:
-        "Sermons of Epiphany unfolds in a mythic world where elves, men, and ancient beings are bound by prophecy, war, and pride. As kingdoms clash over land and power, an ancient prophecy foretells the rise of the Son of a Wendigo—one who can bring the endless war of Senjo to a halt. But the child is born not of royalty, but of forbidden love, making him both a threat and a prize. Through wandering storytellers, fallen warriors, political betrayal, and devastating loss, the narrative explores how ambition corrupts virtue and how violence echoes across generations. As bloodlines fracture and kingdoms burn, a single life carries the burden of redemption. Epic yet intimate, the novel examines destiny, sacrifice, and whether compassion can survive in a world ruled by power.",
+        "Sermons of Epiphany unfolds in a mythic world where elves, men, and ancient beings are bound by prophecy, war, and pride. As kingdoms clash over land and power, an ancient prophecy foretells the rise of the Son of a Wendigo. One who can bring the endless war of Senjo to a halt. But the child is born not of royalty, but of forbidden love, making him both a threat and a prize. Through wandering storytellers, fallen warriors, political betrayal, and devastating loss, the narrative explores how ambition corrupts virtue and how violence echoes across generations. As bloodlines fracture and kingdoms burn, a single life carries the burden of redemption. Epic yet intimate, the novel examines destiny, sacrifice, and whether compassion can survive in a world ruled by power.",
 
       synopsis2: null,
       link: "https://drive.google.com/file/d/1YEqFhz400P2xC5-rsm_5iH7QsqWZRUh0/view?usp=drive_link",
@@ -97,9 +97,7 @@ const WriteUps = () => {
           </div>
         ))}
       </div>
-
-      {/* Bottom curve line */}
-      {/* <div className="absolute bottom-10 left-0 w-full border-t border-black/20 rotate-[-2deg]" /> */}
+      
     </section>
   )
 }

@@ -1,33 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
-
-
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  try {
-    const res = await fetch("/api/send-email.js", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message }),
-    });
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    if (!res.ok) throw new Error("Failed");
+    if (!serviceID || !templateID || !publicKey) {
+      toast.error("Email service not configured");
+      return;
+    }
 
-    toast.success("Message sent successfully!");
-    setName("");
-    setEmail("");
-    setMessage("");
-  } catch (err) {
-    toast.error("Something went wrong. Please try again.");
-  }
-};
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message,
+    };
+
+    emailjs
+      .send(serviceID, templateID, templateParams, publicKey)
+      .then(() => {
+        toast.success("Message sent successfully!");
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((err) => {
+        console.error("EmailJS Error:", err);
+        toast.error("Something went wrong!");
+      });
+  };
 
   return (
     <section
@@ -38,11 +48,13 @@ const Contact = () => {
         CONTACT
       </h2>
 
-      <div className="relative z-10 max-w-4xl mx-auto mt-20 md:mt-48">
+      <div className="relative z-10 max-w-4xl mx-auto mt-48">
         <p className="mt-4 text-sm tracking-widest text-black">
-          <a href="mailto:nathhirakj16@gmail.com">nathhirakj16@gmail.com</a>
+          nathhirakj16@gmail.com
         </p>
-        <p className="mt-4 text-sm tracking-widest text-black">+91 7578892971</p>
+        <p className="mt-4 text-sm tracking-widest text-black">
+          +91 75788 92971
+        </p>
 
         <form className="mt-14 border border-black/40" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 border-b border-black/40">
@@ -51,7 +63,7 @@ const Contact = () => {
               placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="bg-transparent px-4 py-4 text-sm outline-none border-b md:border-b-0 md:border-r border-black/40 placeholder-black/60"
+              className="bg-transparent px-4 py-4 text-sm outline-none border-b md:border-b-0 md:border-r border-black/40"
               required
             />
             <input
@@ -59,7 +71,7 @@ const Contact = () => {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-transparent px-4 py-4 text-sm outline-none placeholder-black/60"
+              className="bg-transparent px-4 py-4 text-sm outline-none"
               required
             />
           </div>
@@ -69,7 +81,7 @@ const Contact = () => {
             rows={6}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full bg-transparent px-4 py-4 text-sm outline-none placeholder-black/60"
+            className="w-full bg-transparent px-4 py-4 text-sm outline-none"
             required
           />
 
@@ -82,15 +94,6 @@ const Contact = () => {
             </button>
           </div>
         </form>
-
-        <div className="mt-16 flex flex-wrap justify-center gap-10 text-xs tracking-widest text-black/60">
-          <a href="https://www.instagram.com/hotaryuk/" target="_blank"
-            rel="noopener noreferrer" className="cursor-pointer hover:text-black">Instagram</a>
-          <a href="https://www.linkedin.com/in/hirak-j-nath/" target="_blank"
-            rel="noopener noreferrer" className="cursor-pointer hover:text-black">LinkedIn</a>
-          <a href="https://www.behance.net/hirakjnath" target="_blank"
-            rel="noopener noreferrer" className="cursor-pointer hover:text-black">Behance</a>
-        </div>
       </div>
     </section>
   );
